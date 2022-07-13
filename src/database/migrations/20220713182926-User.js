@@ -7,27 +7,25 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       displayName: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING(255)
       },
       email: {
         allowNull: false,
-        type: Sequelize.STRING(255),
-        unique: true,
+        type: Sequelize.STRING(255)
       },
       password: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING(255)
       },
       image: {
         allowNull: false,
-        type: Sequelize.STRING(255),
+        type: Sequelize.STRING(255)
       },
     });
-
   },
 
   down: async (queryInterface, Sequelize) => {
