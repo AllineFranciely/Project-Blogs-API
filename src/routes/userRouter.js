@@ -14,4 +14,6 @@ router.post('/', validateCreateUser, rescue(userController.createUser));
 
 router.get('/', validateTokenJWT, rescue(userController.getUsers));
 
+router.get('/:id', validateTokenJWT, rescue(userController.getUserById));
+
 module.exports = router; 
