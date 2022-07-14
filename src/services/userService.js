@@ -13,7 +13,7 @@ const createUser = async ({ displayName, email, password, image }) => {
 
   const payload = { displayName, email };
 
-  const config = { expiresIn: '7d', algorithm: 'HS256' };
+  const config = { expiresIn: '10d', algorithm: 'HS256' };
 
   await User.create({ displayName, email, password, image });
 
@@ -22,6 +22,16 @@ const createUser = async ({ displayName, email, password, image }) => {
   return { statusCode: 201, result: { token } };
 };
 
+const getUsers = async () => {
+  const users = await User.findAll({ attributes: { exclude: 'password' } });
+
+  return {
+    statusCode: 200,
+    result: users,
+  };
+};
+
 module.exports = {
   createUser,
+  getUsers,
 };
