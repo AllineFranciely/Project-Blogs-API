@@ -6,7 +6,7 @@ const rescue = require('express-rescue');
 
 const loginController = require('../controllers/loginController');
 
-const loginJoi = require('../middlewares/joiMiddleware');
+const loginJoi = require('../middlewares/loginJoiMiddleware');
 
 router.post('/', loginJoi, rescue(loginController.login));
 

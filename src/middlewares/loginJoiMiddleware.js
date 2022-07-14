@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const login = Joi.object({
   email: Joi.string().required().empty(),
-  password: Joi.number().required().empty(),
+  password: Joi.string().required().empty(),
 }).messages({
   'any.required': 'Some required fields are missing',
   'string.empty': 'Some required fields are missing',
