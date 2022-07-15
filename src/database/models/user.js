@@ -11,9 +11,9 @@ const UserSchema = (sequelize, DataTypes) => {
     image: DataTypes.STRING,
   }, { timestamps: false });
 
-  // TableUser.associate = (models) => {
-  //   TableUser.hasMany(models.BlogPost, { foreignKey: 'userId', as: 'posts' });
-  // }
+  TableUser.associate = (models) => {
+    TableUser.hasMany(models.BlogPost, { foreignKey: 'userId', as: 'posts' });
+  }
 
   return TableUser;
 }
