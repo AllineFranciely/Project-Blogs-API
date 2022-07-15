@@ -25,10 +25,7 @@ const createUser = async ({ displayName, email, password, image }) => {
 const getUsers = async () => {
   const users = await User.findAll({ attributes: { exclude: 'password' } });
 
-  return {
-    statusCode: 200,
-    result: users,
-  };
+  return users;
 };
 
 const getUserById = async ({ id }) => {
