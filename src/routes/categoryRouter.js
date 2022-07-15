@@ -13,4 +13,6 @@ const validateTokenJWT = require('../middlewares/tokenJWTValidate');
 router.post('/', validateTokenJWT, validateCreateCategory,
   rescue(categoriesController.createCategory));
 
+router.get('/', validateTokenJWT, categoriesController.getCategories);
+
 module.exports = router;
