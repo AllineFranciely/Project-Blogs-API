@@ -10,7 +10,7 @@ const validateCreateCategory = (req, res, next) => {
   if (!error) {
     return next();
   }
-
+console.log(error);
   const [message] = error.details.map((e) => e.message);
 
   return res.status(400).json({ message });

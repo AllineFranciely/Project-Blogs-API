@@ -16,7 +16,12 @@ const login = async ({ email, password }) => {
     return { statusCode: 400, result: { message: 'Invalid fields' } };
   }
 
-  const token = jwt.sign({ email }, JWT_SECRET, config);
+  const infos = {
+    email,
+    id: findedUser.id,
+  };
+
+  const token = jwt.sign(infos, JWT_SECRET, config);
 
   return { statusCode: 200, result: { token } };
 };

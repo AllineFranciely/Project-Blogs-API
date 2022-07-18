@@ -10,7 +10,8 @@ module.exports = async (req, res, next) => {
   }
 
   try {
-    jwt.verify(token, JWT_SECRET);
+    const tokenValidado = jwt.verify(token, JWT_SECRET);
+    req.user = tokenValidado;
     next();
   } catch (err) {
     return res.status(401).json({ message: 'Expired or invalid token' });

@@ -16,6 +16,8 @@ app.use('/user', routes.userRouter);
 
 app.use('/categories', routes.categoryRouter);
 
+app.use('/post', routes.postRouter);
+
 app.use(error);
 // ...
 
