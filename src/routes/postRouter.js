@@ -10,4 +10,6 @@ const postsController = require('../controllers/postController');
 
 router.get('/', validateTokenJWT, rescue(postsController.getPosts));
 
+router.get('/:id', validateTokenJWT, rescue(postsController.getPostById));
+
 module.exports = router;
